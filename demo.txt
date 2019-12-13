@@ -1,0 +1,161 @@
+csc343h-liaaron3=> \i runner.txt
+-------------------- Loading schema and data: --------------------
+
+psql:schema.ddl:15: NOTICE:  drop cascades to 16 other objects
+DETAIL:  drop cascades to table guest
+drop cascades to table renter
+drop cascades to table host
+drop cascades to table property
+drop cascades to table luxury
+drop cascades to table cityproperty
+drop cascades to table waterproperty
+drop cascades to table party
+drop cascades to table partymembers
+drop cascades to table propertyrating
+drop cascades to table comments
+drop cascades to table hostrating
+drop cascades to view realpartysize
+drop cascades to view hostwithratings
+drop cascades to view ratedhostwithproperty
+drop cascades to view otherproperty
+DROP SCHEMA
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 6
+INSERT 0 5
+INSERT 0 3
+INSERT 0 6
+INSERT 0 14
+INSERT 0 1
+INSERT 0 1
+INSERT 0 5
+INSERT 0 7
+INSERT 0 5
+INSERT 0 9
+INSERT 0 5
+INSERT 0 3
+
+-------------------- Query 1: -----------------------------------
+
+SET
+         service          | count 
+--------------------------+-------
+ laundry service          |     2
+ daily cleaning           |     3
+ sauna                    |     2
+ hot tub                  |     4
+ concierge service        |     2
+ daily breakfast delivery |     1
+(6 rows)
+
+
+-------------------- Query 2: -----------------------------------
+
+SET
+psql:q2.sql:4: NOTICE:  view "rentalcapacities" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q2.sql:10: NOTICE:  view "realpartysize" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q2.sql:17: NOTICE:  view "rentalpartysize" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q2.sql:23: NOTICE:  view "fullrentals" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q2.sql:31: NOTICE:  view "fullrentalswithratings" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q2.sql:38: NOTICE:  view "undercapacityrentals" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q2.sql:46: NOTICE:  view "undercapacityrentalswithratings" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+ propertycount |     averagerating      |    capacity    
+---------------+------------------------+----------------
+             2 |     3.8333333333333334 | at capacity
+             1 | 1.66666666666666670000 | under capacity
+(2 rows)
+
+
+-------------------- Query 3: -----------------------------------
+
+SET
+psql:q3.sql:4: NOTICE:  view "hostwithratings" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q3.sql:11: NOTICE:  view "ratedhostwithproperty" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q3.sql:17: NOTICE:  view "ratedhostwithmaxprice" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q3.sql:24: NOTICE:  view "highestaverage" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+     email     |     avgrating      | maxprice 
+---------------+--------------------+----------
+ han@gmail.com | 4.3333333333333333 |     1220
+(1 row)
+
+
+-------------------- Query 4: -----------------------------------
+
+SET
+psql:q4.sql:6: NOTICE:  view "listingproperties" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q4.sql:12: NOTICE:  view "partyproperties" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q4.sql:22: NOTICE:  view "avgcityproperty" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q4.sql:31: NOTICE:  view "avgwaterproperty" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q4.sql:40: NOTICE:  view "otherproperty" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q4.sql:54: NOTICE:  view "avgotherproperty" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+ avgcity | avgwater | avgother 
+---------+----------+----------
+       2 |        1 |      1.5
+(1 row)
+
+
+-------------------- Query 5: -----------------------------------
+
+psql:q5.sql:2: NOTICE:  view "propertyprices" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q5.sql:10: NOTICE:  view "absolutemaxprice" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:q5.sql:16: NOTICE:  view "allpriceinfo" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+ propertyid | minprice | maxprice |   range   | highestrange 
+------------+----------+----------+-----------+--------------
+          2 |      580 |      600 | 580-600   | 
+          3 |      750 |      750 | 750-750   | 
+          5 |     1000 |     1220 | 1000-1220 | *
+(3 rows)
+
